@@ -1,0 +1,22 @@
+// input {
+//     filter: opacity(0);
+//     height: 40px;
+// }
+
+// .ratingStar {
+//     position: relative;
+//     left: -40px;
+// }
+
+// .starLabel {
+//     width: 40px;
+// }
+
+.ratingStars img{
+    height: 1.4rem;
+    padding: 2px;
+}
+
+.grayStar {
+    filter: grayscale(100);
+}

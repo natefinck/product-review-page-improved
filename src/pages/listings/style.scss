@@ -1,0 +1,43 @@
+.productListing {
+    background-color: #424242;
+    border-radius: 3px;
+    padding: 1rem;
+    margin: 1.5rem 0;
+}
+
+.rating {
+    display: flex;
+
+    div {
+        padding: .6rem;
+    }
+}
+
+.number {
+    font-size: 1.8rem;
+    width: 2rem;
+}
+
+.exampleStar {
+    height: 3rem;
+    filter:  grayscale(.5) invert(1);
+}
+
+.productListing {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 600px) {
+    .number {
+        font-size: 1.4rem;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+
+    .productListing {
+        display: block;
+    }
+}
