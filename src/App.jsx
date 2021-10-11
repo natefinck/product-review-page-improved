@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import './App.scss';
 import {
   BrowserRouter as Router,
