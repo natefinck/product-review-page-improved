@@ -5,9 +5,7 @@ import axios from 'axios';
 import StarRating from '../components/static-star/static-star';
 
 function App() {
-  // const[loading, setLoading] = useState(true);
   const[products, setProducts] = useState(null);
-  // const[error, setError] = useState(false);
 
   useEffect(() => {
     async function getProducts() {

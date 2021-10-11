@@ -9,10 +9,11 @@ var cors = require('cors');
 const app  = express();
 app.use(cors());
 app.use(express.static(path.join(__dirname, 'build')));
+app.use(bodyParser.json());
 const port = process.env.PORT || 5000;
 
 app.get('/ping', function (req, res) {
-  res.send({success: true, message: 'pong'})
+  res.send({success: true, message: 'pong'});
 });
 
 app.get('/products', async (req, res) => {
@@ -20,8 +21,18 @@ app.get('/products', async (req, res) => {
 });
 
 app.get('/products/:productid', async (req, res) => {
-  res.send(products.products[req.params.productid])
-  // return res.status(200).json(products.products[req.params.productid]);
+  res.send(products.products[req.params.productid]);
+});
+
+app.post('/addProduct/:productid', async (req, res) => {
+  reviews = products.products[req.params.productid].reviews;
+  const rating = req.body.rating*2;
+  const review = req.body.review;
+  reviews.push({
+    rating,
+    review
+  });
+  res.sendStatus(204);
 });
 
 app.use('/static', express.static(path.join(__dirname, '..', 'build', 'static')));

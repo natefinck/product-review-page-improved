@@ -1,0 +1,99 @@
+.info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info div {
+    padding: .6rem;
+}
+
+.stars {
+    margin: auto;
+}
+
+.stars img {
+    height: 1.5rem;
+    padding: 3px;
+}
+
+.divider {
+    border-bottom: 1px solid #424242;
+}
+
+.buttonContainer {
+    margin: auto 0;
+    padding: 1rem;
+}
+
+.buttonContainer button {
+    padding: .8rem;
+    background-color: #424242;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.review {
+    border-bottom: 1px solid #424242;
+}
+
+.reviewRating {
+    display: flex;
+    width: 100%;
+}
+
+.reviewRating div {
+    padding: 1rem .4rem;
+}
+
+.reviewText {
+    padding: 0 .8rem .8rem 1.5rem;
+    line-height: 1.5rem;
+}
+
+.reviewNumber {
+    font-size: 1.5rem;
+    margin: auto 0;
+}
+
+.number {
+    font-size: 1.8rem;
+}
+
+.title h1 {
+    margin: .5rem 0 0 0;
+}
+
+.userReview textarea {
+    color: white;
+    background-color: #424242;
+    border: 0px;
+    width: 90%;
+    height: 7rem;
+    padding: .5rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    resize: none;
+
+    //disable selection highlight on click
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+
+.userReview textarea:focus {
+    outline: none;
+}
+
+.loadingContainer {
+    text-align: center;
+}
+
+.submit {
+    color: white;
+    padding: .8rem;
+    background-color: #424242;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
