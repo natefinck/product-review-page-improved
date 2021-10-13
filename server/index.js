@@ -35,6 +35,7 @@ app.post('/addProduct/:productid', async (req, res) => {
   res.sendStatus(204);
 });
 
+//serving react and my server on the same port
 app.use('/static', express.static(path.join(__dirname, '..', 'build', 'static')));
 app.use(express.static(path.join(__dirname, '..', 'build')));
 

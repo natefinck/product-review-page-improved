@@ -53,7 +53,6 @@ function App(props) {
         `http://localhost:5000/addProduct/` + productId, 
         payload
       ).then(res => {
-        console.log(res);
         return res;
       });
     } catch (err) {
@@ -69,11 +68,8 @@ function App(props) {
       ).then(res => {
         setProduct(res.data);
         let rating = res.data;
-        console.log(rating);
         rating = getAverageRating(rating);
-        console.log(rating);
         rating = tenToFiveRating(rating);
-        console.log(rating);
         // let rating = tenToFiveRating(getAverageRating(res.data));
         setProductRating(rating);
         setLoading(false);
@@ -98,9 +94,7 @@ function App(props) {
     let text = reviewTextarea.value;
     //check if review is empty
     if (!text.replace(/\s/g, '').length) {
-      console.log(errorMessage);
       setErrorMessage('Please enter a review.');
-      console.log(errorMessage);
     } else {
       addNewProductReview(reviewRating, reviewTextarea.value);
       setModalOpen(false);
