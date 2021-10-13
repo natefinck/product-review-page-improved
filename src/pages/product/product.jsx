@@ -50,7 +50,7 @@ function App(props) {
     }
     try {
       await axios.post(
-        `http://localhost:5000/addProduct/` + productId, 
+        `/addProduct/` + productId, 
         payload
       ).then(res => {
         return res;
@@ -64,7 +64,7 @@ function App(props) {
   async function getProduct() {
     try {
       await axios.get(
-        `http://localhost:5000/products/` + productId
+        `/products/` + productId
       ).then(res => {
         setProduct(res.data);
         let rating = res.data;

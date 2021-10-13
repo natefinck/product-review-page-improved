@@ -11,7 +11,7 @@ function App() {
     async function getProducts() {
       try {
         await axios.get(
-          `http://localhost:5000/products`
+          `/products`
         ).then(res => {
           setProducts(res.data.products.products);
           return res
