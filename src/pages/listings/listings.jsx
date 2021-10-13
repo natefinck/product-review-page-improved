@@ -12,6 +12,7 @@ function App() {
   const[loading, setLoading] = useState(true);
 
   useEffect(() => {
+    document.title = 'Products';
     async function getProducts() {
       try {
         await axios.get(

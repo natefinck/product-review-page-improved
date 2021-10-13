@@ -70,7 +70,6 @@ function App(props) {
         let rating = res.data;
         rating = getAverageRating(rating);
         rating = tenToFiveRating(rating);
-        // let rating = tenToFiveRating(getAverageRating(res.data));
         setProductRating(rating);
         setLoading(false);
         return res;
@@ -79,9 +78,11 @@ function App(props) {
       setLoading(false);
       return err;
     }
+
   }
 
   useEffect(() => {
+    document.title = 'Product';
     getProduct();
   },[]);
 
