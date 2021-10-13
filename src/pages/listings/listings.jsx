@@ -4,8 +4,12 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import StarRating from '../components/static-star/static-star';
 
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+import Loader from 'react-loader-spinner';
+
 function App() {
   const[products, setProducts] = useState(null);
+  const[loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function getProducts() {
@@ -14,10 +18,11 @@ function App() {
           `/products`
         ).then(res => {
           setProducts(res.data.products.products);
+          setLoading(false);
           return res
         });
       } catch (err) {
-        // setError(true);
+        setLoading(false);
         return err;
       }
     }
@@ -39,7 +44,13 @@ function App() {
       <div className="card">
         <h1>Products</h1>
         <div className="productsContainer">
-          {!products &&
+          {loading && 
+          <div className="loadingContainer">
+            <h1>Loading</h1>
+            <Loader type="ThreeDots" color="#fff" height={80} width={80} />
+          </div>
+          }
+          {!products && !loading &&
             <div className="productListing">
               <h3>Sorry, we couldn&apos;t load product data.</h3>
             </div>
